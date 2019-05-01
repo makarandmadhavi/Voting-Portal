@@ -18,6 +18,7 @@ $house_posts = gethousecandidates();
                     <table class="table table-hover">
                         <thead>
                             <tr>
+                                <th scope="col">#</th>
                                 <th scope="col">Name</th>
                                 <th scope="col">Votes</th>
                                 <!-- <th scope="col"></th>
@@ -25,11 +26,14 @@ $house_posts = gethousecandidates();
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach($post as $candidate){ ?>
+                            <?php foreach($post as $rank=>$candidate){ ?>
                             <tr class="hov" id="<?=$candidate['id']?>">
+                                <td>
+                                    <?=$rank+1?>
+                                </td>
                                 <td style="column-width:270px;"><?=$candidate['name']?></td>
                                 <td>
-                                <?=$candidate['votes']?>
+                                    <?=$candidate['votes']?>
                                 </td>
                                 <td style="column-width:1px;">
                                 </td>
@@ -75,6 +79,7 @@ $house_posts = gethousecandidates();
                             <table class="table table-hover hov">
                                 <thead>
                                     <tr>
+                                        <th scope="col">#</th>
                                         <th scope="col">Name</th>
                                         <th scope="col">Votes</th>
                                         <!-- <th scope="col"></th>
@@ -82,8 +87,11 @@ $house_posts = gethousecandidates();
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php foreach($post as $candidate){ ?>
+                                    <?php foreach($post as $rank=>$candidate){ ?>
                                     <tr class="hov" id="<?=$candidate['id']?>">
+                                        <td>
+                                            <?=$rank+1?>
+                                        </td>
                                         <td style="column-width:270px;"><?=$candidate['name']?></td>
                                         <td><?=$candidate['votes']?></td>
                                         <td style="column-width:1px;"></td>

@@ -86,6 +86,32 @@ function removecandidate(id, name) {
 
 }
 
+function generatekeys() {
+    keys=$('#keys').val();
+    console.log(keys);
+    //console.log(username);
+    //console.log(password);
+    $.ajax({
+        type: "POST",
+        url: "backend/generatekeys_ajax.php",
+        data: {
+            //data goes here
+            keys
+        },
+        success: function (data) {
+            //data is returned here
+            console.log(data);
+            if (data == "SUCCESS") {
+                alert("Successful");
+                window.location = 'keys.php';
+            } else {
+                alert("Error generating keys");
+                //window.location = '';
+            }
+        }
+    });
+}
+
 $("#postdiv").change(function () {
     var optionSelected = $(this).find("option:selected");
     var valueSelected = optionSelected.val();

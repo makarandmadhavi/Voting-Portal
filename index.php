@@ -25,7 +25,7 @@
 
         <div class="form-group">
             <label for="exampleInputEmail1">KEY</label>
-            <input type="text" class="form-control" id="key" aria-describedby="emailHelp" placeholder="#key">
+            <input style="text-transform: uppercase;" type="text" class="form-control" id="key" aria-describedby="emailHelp" placeholder="#key">
         </div>
         <div class="form-group" id="housediv">
             <label for="exampleInputPassword1">House</label>

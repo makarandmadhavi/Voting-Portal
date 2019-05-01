@@ -52,15 +52,19 @@ $posts = getallposts();
 
             <div class="container add-box">
                 <h3 class="text-center">Generate Keys</h3>
-
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Number of keys</label>
+                    <input type="number" min='1' class="form-control" id="keys" aria-describedby="emailHelp"
+                        placeholder="#">
+                </div>
                 <div>
-                    <button onclick="" class="btn btn-success">Generate</button>
+                    <button onclick="generatekeys()" class="btn btn-success">Generate</button>
                 </div>
 
 
             </div>
             <div class="container add-box">
-                <h3 class="text-center">Get Results</h3>
+                <h3 class="text-center">Results</h3>
 
                 <div><a href="results.php">
                         <button class="btn btn-success">Get Results</button>
