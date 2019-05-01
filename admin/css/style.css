@@ -1,0 +1,40 @@
+.add-box{
+    margin-top: 50px;
+    background-color: #fff;
+    -webkit-box-shadow: 10px 10px 41px -4px rgba(0,0,0,0.21);
+    -moz-box-shadow: 10px 10px 41px -4px rgba(0,0,0,0.21);
+    box-shadow: 10px 10px 41px -4px rgba(0,0,0,0.21);
+    /* max-width: 1000px; */
+    border-radius: 8px;
+    padding: 10px;
+    position: relative;
+}
+
+button{
+    margin-left: 42% !important;
+    margin-bottom: 10px;
+}
+
+#logo{
+    margin-top: 30px;
+    margin-left: 20%;
+    width: 100px;
+}
+#title{
+     padding-top: 38px !important; 
+     font-weight: 100;
+     margin-left: -60px;
+}
+
+label{
+    font-weight: 500;
+    margin-left: 5px;
+}
+
+.hide{
+    visibility: hidden;
+}
+
+#housediv{
+    display: none;
+}

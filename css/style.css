@@ -1,0 +1,61 @@
+.add-box {
+    margin-top: 20px;
+    background-color: #fff;
+    -webkit-box-shadow: 10px 10px 41px -4px rgba(0, 0, 0, 0.21);
+    -moz-box-shadow: 10px 10px 41px -4px rgba(0, 0, 0, 0.21);
+    box-shadow: 10px 10px 41px -4px rgba(0, 0, 0, 0.21);
+    /* max-width: 1000px; */
+    border-radius: 8px;
+    padding: 10px;
+    position: relative;
+}
+
+
+#logo {
+    margin-top: 30px;
+    margin-left: 20%;
+    width: 100px;
+}
+
+#title {
+    padding-top: 38px !important;
+    font-weight: 100;
+    margin-left: -60px;
+}
+
+label {
+    font-weight: 500;
+    margin-left: 5px;
+}
+
+.hide {
+    visibility: hidden;
+}
+
+.list-group-item {
+    user-select: none;
+}
+
+.list-group input[type="radio"] {
+    display: none;
+}
+
+.list-group input[type="radio"]+.list-group-item {
+    cursor: pointer;
+}
+
+.list-group input[type="radio"]+.list-group-item:before {
+    content: "\2022";
+    color: transparent;
+    font-weight: bold;
+    margin-right: 1em;
+}
+
+.list-group input[type="radio"]:checked+.list-group-item {
+    background-color: #0275D8;
+    color: #FFF;
+}
+
+.list-group input[type="radio"]:checked+.list-group-item:before {
+    color: inherit;
+}
