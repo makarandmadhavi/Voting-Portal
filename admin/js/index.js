@@ -1,3 +1,6 @@
+var active=0;
+var txt="";
+
 function login() {
     username = $('#username').val();
     password = $('#password').val();
@@ -86,6 +89,33 @@ function removecandidate(id, name) {
 
 }
 
+function updatecandidate(id) {
+        name=$("#candidate"+id).val();
+        console.log(id);
+        $.ajax({
+            type: "POST",
+            url: "backend/updatecandidate_ajax.php",
+            data: {
+                //data goes here
+                id,
+                name
+
+            },
+            success: function (data) {
+                //data is returned here
+                if (data == "SUCCESS") {
+                    alert("Candidate updated");
+                    window.location = '';
+                } else {
+                    alert("Error updating candidate");
+                    window.location = '';
+                }
+            }
+        });
+    
+
+}
+
 function generatekeys() {
     keys=$('#keys').val();
     console.log(keys);
@@ -112,6 +142,42 @@ function generatekeys() {
     });
 }
 
+
+function editbtn(id){
+    //console.log(id);
+    active=id;
+    txt=$("#candidate"+id).val();
+    $("#candidate"+id).removeAttr("disabled");
+    $("#candidate"+id).focus();
+    $("#editbtn"+id).hide();
+    $("#removebtn"+id).hide();
+    $("#cancelbtn"+id).show();
+    $("#updatebtn"+id).show();
+}
+
+function cancelbtn(id,name){
+    //console.log(id);
+    //console.log(name);
+    $("#candidate"+id).val(name);
+    $("#editbtn"+id).show();
+    $("#removebtn"+id).show();
+    $("#cancelbtn"+id).hide();
+    $("#updatebtn"+id).hide();
+    $("#removebtn"+id).addClass('hide');
+    $("#editbtn"+id).addClass('hide');
+    active=0;
+}
+
+$("body").click(function(){
+    //console.log(event.target.nodeName);
+    //console.log(event.target.id);
+    if(active && event.target.id!="candidate"+active && event.target.nodeName!="BUTTON" ){
+        cancelbtn(active,txt);
+        //console.log("Cancel"+active);
+
+    }
+});
+
 $("#postdiv").change(function () {
     var optionSelected = $(this).find("option:selected");
     var valueSelected = optionSelected.val();
@@ -124,13 +190,23 @@ $("#postdiv").change(function () {
 
 });
 
+
 $(".hov").hover(function () {
-    console.log("removebtn"+this.id);
-    $("#removebtn"+this.id).removeClass('hide');
-    $("#editbtn"+this.id).removeClass('hide');
+
+    //console.log("removebtn"+this.id);
+    if(!active){
+        $("#removebtn"+this.id).removeClass('hide');
+        $("#editbtn"+this.id).removeClass('hide');
+    }
     
+        
+
 }, function () {
-    $("#removebtn"+this.id).addClass('hide');
-    $("#editbtn"+this.id).addClass('hide');
+    if(!active){
+        $("#removebtn"+this.id).addClass('hide');
+        $("#editbtn"+this.id).addClass('hide');
+    }
+    
     //after hover
 });
+

@@ -27,14 +27,27 @@ $house_posts = gethousecandidates();
                         <tbody>
                             <?php foreach($post as $candidate){ ?>
                             <tr class="hov" id="<?=$candidate['id']?>">
-                                <td style="column-width:270px;"><?=$candidate['name']?></td>
-                                <td><button id="editbtn<?=$candidate['id']?>"
+                                <td style="column-width:270px;">
+                                    <input id="candidate<?=$candidate['id']?>" type="text" class="inputedit" disabled
+                                        value="<?=$candidate['name']?>">
+                                </td>
+                                <td><button onclick="editbtn(<?=$candidate['id']?>)" id="editbtn<?=$candidate['id']?>"
                                         class="btn btn-info btn-sm hide">edit</button>
+
+                                    <button onclick="updatecandidate(<?=$candidate['id']?>)"
+                                        id="updatebtn<?=$candidate['id']?>"
+                                        class="btn btn-info btn-sm hidenone">update</button>
                                 </td>
                                 <td style="column-width:1px;">
                                     <button id="removebtn<?=$candidate['id']?>"
                                         onclick="removecandidate('<?=$candidate['id']?>','<?=$candidate['name']?>')"
-                                        class="btn btn-danger btn-sm hide">remove</button></td>
+                                        class="btn btn-danger btn-sm hide">remove</button>
+
+                                    <button id="cancelbtn<?=$candidate['id']?>"
+                                        onclick="cancelbtn('<?=$candidate['id']?>','<?=$candidate['name']?>')"
+                                        class="btn btn-danger btn-sm hidenone">cancel</button>
+                                </td>
+
                             </tr>
                             <?php } ?>
                             <!-- <tr>
@@ -86,12 +99,26 @@ $house_posts = gethousecandidates();
                                 <tbody>
                                     <?php foreach($post as $candidate){ ?>
                                     <tr class="hov" id="<?=$candidate['id']?>">
-                                        <td style="column-width:270px;"><?=$candidate['name']?></td>
-                                        <td><button id="editbtn<?=$candidate['id']?>"
-                                                class="btn btn-info btn-sm hide">edit</button></td>
+                                        <td style="column-width:270px;">
+                                            <input id="candidate<?=$candidate['id']?>" type="text" class="inputedit"
+                                                disabled value="<?=$candidate['name']?>">
+                                        </td>
+                                        <td><button onclick="editbtn(<?=$candidate['id']?>)"
+                                                id="editbtn<?=$candidate['id']?>"
+                                                class="btn btn-info btn-sm hide">edit</button>
+
+                                            <button onclick="updatecandidate(<?=$candidate['id']?>)"
+                                                id="updatebtn<?=$candidate['id']?>" 
+                                                class="btn btn-info btn-sm hidenone">update</button>
+                                        </td>
                                         <td style="column-width:1px;"><button id="removebtn<?=$candidate['id']?>"
                                                 onclick="removecandidate('<?=$candidate['id']?>','<?=$candidate['name']?>')"
-                                                class="btn btn-danger btn-sm hide">remove</button></td>
+                                                class="btn btn-danger btn-sm hide">remove</button>
+
+                                            <button id="cancelbtn<?=$candidate['id']?>"
+                                                onclick="cancelbtn('<?=$candidate['id']?>','<?=$candidate['name']?>')"
+                                                class="btn btn-danger btn-sm hidenone">cancel</button>
+                                        </td>
                                     </tr>
                                     <?php } ?>
                                     <!-- <tr>
