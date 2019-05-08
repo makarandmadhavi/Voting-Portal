@@ -11,4 +11,4 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body style="background-color:<?=$_SESSION['housecolor']?>">

@@ -16,8 +16,11 @@ function login() {
             if (data == "SUCCESS") {
                 alert("Successful Login");
                 window.location = 'vote.php';
+            } else if (data == "KEYUSED") {
+                alert("The KEY has already been used for Voting! if you haven't voted please request another key!");
+                window.location = '';
             } else {
-                alert("Incorect sfsfsfKey");
+                alert("Incorrect Key! KEY does not exist");
                 window.location = '';
             }
         }
@@ -47,48 +50,42 @@ function addvotes(voteids) {
     });
 }
 
-function vote(){
-    voteids=[];
-    allselected=1;
+function vote() {
+    voteids = [];
+    allselected = 1;
     //console.log(headboy);
     $.ajax({
         type: "POST",
         url: "backend/getposts_ajax.php",
         data: {
             //data goes here
-            
+
         },
         success: function (data) {
             //data is returned here
             if (data) {
                 arr = JSON.parse(data);
                 arr.forEach(post => {
-                    voteid=$("input[name='"+post+"']:checked").val();
+                    voteid = $("input[name='" + post + "']:checked").val();
                     voteids.push(voteid)
                     //console.log(voteid);
-                    if(voteid==undefined){
-                        allselected=0;
+                    if (voteid == undefined) {
+                        allselected = 0;
                         //console.log("inside "+allselected)
                     }
                 });
-                if(allselected){
+                if (allselected) {
                     //console.log("all selected");
                     addvotes(voteids);
-                }
-                else{
+                } else {
                     alert("Please Vote for all Posts!");
                 }
                 //console.log(voteids);
             } else {
-               
+
                 alert("Error Voting");
             }
         }
     });
 
 }
-
-
-
-
-

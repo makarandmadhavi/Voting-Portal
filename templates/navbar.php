@@ -9,7 +9,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" disabled href=""><?=$_SESSION['house']?>  House<span class="sr-only">(current)</span></a>
+                <img src="images/<?=$_SESSION['house']?>.jpg" class="houseimg" alt="">
             </li> 
             <!-- <li class="nav-item">
                 <a class="nav-link" href="viewcandidates.php">View Candidates</a>
@@ -18,7 +18,7 @@
                 <a class="nav-link" href="">View Orders</a>
             </li> -->
         </ul>
-        <p style="margin-right:20px; margin-top:10px;">click here after selecting all candidates ->  </p>
+        <h1 class="votehead">Click to vote  </h1>
         <div style="margin-right: 100px;">
             <button onclick="vote()" class="btn btn-outline-success">Cast your Vote!</button>
         </div>

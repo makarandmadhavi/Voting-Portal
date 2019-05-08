@@ -10,7 +10,20 @@
     position: relative;
 }
 
+h5{
+    font-weight: 1000;
+}
 
+.houseimg{
+    height: 70px;
+}
+
+.votehead{
+    margin-right:35%;  
+    margin-top:10px;
+    font-weight: 300;
+    font-size: 30px;
+}
 
 
 #logo {
@@ -26,7 +39,8 @@
 }
 
 label {
-    font-weight: 500;
+    font-weight: 500 !important;
+    font-size: 17px !important;
     margin-left: 5px;
 }
 

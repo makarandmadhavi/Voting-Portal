@@ -7,9 +7,19 @@
     $result = $conn->query($sql);
     $row = $result->fetch_assoc();
     if($row){
-        session_start();
-       $_SESSION['key'] = $row['keyid'];
-       $_SESSION['house'] = $house;
-       echo 'SUCCESS';
+        if($row['isused']=='0'){
+            session_start();
+            $_SESSION['key'] = $row['keyid'];
+            $_SESSION['house'] = $house;
+            $sql = "SELECT * FROM houses WHERE house='$house'";
+            $result = $conn->query($sql);
+            $row = $result->fetch_assoc();
+            $_SESSION['housecolor'] = $row['color'];
+            echo 'SUCCESS';
+        }
+        else{
+            echo 'KEYUSED';
+        }
+        
     }
 ?>
