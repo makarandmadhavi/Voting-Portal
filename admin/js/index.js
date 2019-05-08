@@ -146,6 +146,7 @@ function generatekeys() {
 function editbtn(id){
     //console.log(id);
     active=id;
+    $("#"+id).css("background-color","#f0f0f0");
     txt=$("#candidate"+id).val();
     $("#candidate"+id).removeAttr("disabled");
     $("#candidate"+id).focus();
@@ -158,6 +159,7 @@ function editbtn(id){
 function cancelbtn(id,name){
     //console.log(id);
     //console.log(name);
+    $("#"+id).css("background-color","");
     $("#candidate"+id).val(name);
     $("#editbtn"+id).show();
     $("#removebtn"+id).show();
