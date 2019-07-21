@@ -7,7 +7,7 @@ $data=getcandidates();
 $house_posts = gethousecandidates();
 ?>
 
-<div class="container">
+<div class="container" margin="">
     <div class="row ">
 
         <?php foreach($data as $key=>$post){ ?>
