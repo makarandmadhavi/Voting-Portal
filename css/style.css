@@ -75,3 +75,9 @@ label {
 .list-group input[type="radio"]:checked+.list-group-item:before {
     color: inherit;
 }
+
+.card-header {
+    color: green;
+    font-weight: bold;
+    font-size: larger;
+}

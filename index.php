@@ -24,8 +24,9 @@
     <div class="container">
 
         <div class="form-group">
-            <label for="exampleInputEmail1">KEY</label>
-            <input style="text-transform: uppercase;" type="text" class="form-control" id="key" aria-describedby="emailHelp" placeholder="#key">
+            <label for="exampleInputEmail1">Voting ID</label>
+            <input type="text" class="form-control" id="key"
+                aria-describedby="emailHelp" placeholder="ID">
         </div>
         <div class="form-group" id="housediv">
             <label for="exampleInputPassword1">House</label>
@@ -36,9 +37,12 @@
                 <option value="Zeus">Zeus</option>
             </select>
         </div>
-
-        <button style="margin-left:40%;" onclick="login()" class="btn btn-success">Start Voting</button>
-        
+        <center>
+        <button  onclick="login()" class="btn btn-success ">Start Voting</button>
+        <button style="margin-left:5px;" onclick="window.location = 'register.php';" class="btn btn-info ">Register to Vote!</button>
+        </center>
+       <br>
+     
 
     </div>
 

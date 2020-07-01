@@ -20,7 +20,7 @@ function login() {
                 alert("Successful Login");
                 window.location = 'admin.php';
             } else {
-                alert("Incorect Username, password combination");
+                alert(data);
                 window.location = '';
             }
         }
