@@ -6,6 +6,7 @@
 <?php
 $data=getcandidates();
 $house = $_SESSION['house'];
+$_SESSION['housecolor']="white";
 $house_posts = gethousecandidates($house);
 //print_r($house_posts);
 ?>

@@ -1,7 +1,9 @@
 <?php
 include "templates/header.php";
     include 'backend/conn.php';
-    
+    if(!isset($_SESSION['key'])){
+        header("refresh: 0; url = index.php"); 
+    }
     $key = $_SESSION['key'];
     $house = $_SESSION['house'];
     $voteids = $_SESSION['voteids'];
@@ -9,16 +11,20 @@ include "templates/header.php";
     $result = $conn->query($sql);
 
 session_destroy();
-header('Refresh:1; url=index.php');
+
 ?>
 
 
 
 <div class="container">
     <div class="row">
-        <h1>
-            Thank you for Voting!
-        </h1>
+        <div class="col-sm-3"></div>
+        <div class="col-sm-2">
+            <img id="logo" src="images/EuroSchool.jpg" alt="logo">
+        </div>
+        <div class="col-sm-4 text-center">
+            <h1 id="title">Thank you for voting!</h1>
+        </div>
     </div>
 </div>
 
