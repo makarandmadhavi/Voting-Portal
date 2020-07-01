@@ -18,7 +18,7 @@ function login() {
             //data is returned here
             if (data == "SUCCESS") {
                 alert("Successful Login");
-                window.location = 'admin.php';
+                window.location='admin.php'
             } else {
                 alert(data);
                 window.location = '';

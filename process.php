@@ -9,7 +9,7 @@ $enroll = $_POST['enroll'];
 $email = $_POST['email'];
 $house = $_POST['house'];
 
-$keyid = substr(sha1($enroll),0,10);
+$keyid = substr(sha1($enroll."ksndkfne"),0,10);
 
 ?>
 

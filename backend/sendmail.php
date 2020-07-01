@@ -11,7 +11,7 @@ function sendmail($enroll,$email,$keyid,$house){
             $mail->Port = 465; // or 587  465
             $mail->IsHTML(true);
             $mail->Username = "makarandrox@gmail.com"; 
-            $mail->Password = "Mayur@13"; 
+            $mail->Password = ""; 
             $mail->SetFrom("makarandrox@gmail.com");  
             $mail->Subject = "EuroSchool Election";
             $mail->SMTPOptions = array(
@@ -24,7 +24,7 @@ function sendmail($enroll,$email,$keyid,$house){
             
             $mail->Body = "
             <p>Voting will begin at ***time date** and end ***time date*** </p>
-            <p>Click the link below to begin voting - <a href='www.euroschoolelection.hotpo.in/vote.php?id=$keyid&house=$house'>www.euroschoolelection.hotpo.in/vote.php?id=$keyid&house=$house</a>
+            <p>Click the link below to begin voting - <a href='www.euroschoolelection.hotpo.in/index.php?id=$keyid&house=$house'>www.euroschoolelection.hotpo.in/vote.php?id=$keyid&house=$house</a>
             <p>Follow the link in your mail to vote when voting starts</p>
             <h3 >Instructions</h3>
             <ul>

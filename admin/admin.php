@@ -66,7 +66,14 @@ $posts = getallposts();
             <div class="container add-box">
                 <h3 class="text-center">Results</h3>
 
-                <div><a href="results.php">
+                <div>
+                    <p>
+                        Participants Registered = <b><?php echo getregistered();?></b>
+                    </p>
+                    <p>
+                        Participants Voted = <b><?php echo getvoted();?></b>
+                    </p>
+                    <a href="results.php">
                         <button class="btn btn-success">Get Results</button>
                     </a>
                 </div>

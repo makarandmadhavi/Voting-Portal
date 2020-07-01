@@ -11,6 +11,7 @@
             session_start();
             $_SESSION['key'] = $row['keyid'];
             $_SESSION['house'] = $house;
+            $_SESSION['voteids'] = 0;
             $sql = "SELECT * FROM houses WHERE house='$house'";
             $result = $conn->query($sql);
             $row = $result->fetch_assoc();

@@ -26,6 +26,32 @@ function getkeys(){
 return $data;
 }
 
+function getregistered(){
+    include 'conn.php';
+    $data = array();
+    $sql = "SELECT COUNT(*) as count FROM votekeys";
+    $result = $conn->query($sql);
+    if($result){     
+        $row = $result -> fetch_assoc();
+        $data = $row['count'];
+        
+    }
+return $data;
+}
+
+function getvoted(){
+    include 'conn.php';
+    $data = array();
+    $sql = "SELECT COUNT(*) as count FROM votekeys WHERE isused!='0'";
+    $result = $conn->query($sql);
+    if($result){     
+        $row = $result -> fetch_assoc();
+        $data = $row['count'];
+        
+    }
+return $data;
+}
+
 function getcandidates(){
     include 'conn.php';
     $data = array();

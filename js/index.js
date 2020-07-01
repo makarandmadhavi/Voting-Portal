@@ -14,7 +14,6 @@ function login() {
         success: function (data) {
             //data is returned here
             if (data == "SUCCESS") {
-                alert("Successful Login");
                 window.location = 'vote.php';
             } else if (data == "KEYUSED") {
                 alert("The KEY has already been used for Voting! if you haven't voted please request another key!");
@@ -40,7 +39,6 @@ function addvotes(voteids) {
         success: function (data) {
             //data is returned here
             if (data == "SUCCESS") {
-                alert("Vote Successful");
                 window.location = 'logout.php';
             } else {
                 alert("Error");
