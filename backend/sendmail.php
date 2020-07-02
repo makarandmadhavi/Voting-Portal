@@ -2,6 +2,7 @@
 
 function sendmail($enroll,$email,$keyid,$house){
     include "mail/class.phpmailer.php"; // include the class name
+    include "settings.php";
             $mail = new PHPMailer(); // create a new object
             $mail->IsSMTP();         // enable SMTP
             $mail->SMTPDebug = 1;    // debugging: 1 = errors and messages, 2 = messages only
@@ -10,9 +11,9 @@ function sendmail($enroll,$email,$keyid,$house){
             $mail->Host = "smtp.gmail.com";
             $mail->Port = 465; // or 587  465
             $mail->IsHTML(true);
-            $mail->Username = "makarandrox@gmail.com"; 
-            $mail->Password = ""; 
-            $mail->SetFrom("makarandrox@gmail.com");  
+            $mail->Username = $global['email']; 
+            $mail->Password = $global['password']; 
+            $mail->SetFrom($global['email']);  
             $mail->Subject = "EuroSchool Election";
             $mail->SMTPOptions = array(
                 'ssl' => array(
@@ -23,8 +24,8 @@ function sendmail($enroll,$email,$keyid,$house){
             );
             
             $mail->Body = "
-            <p>Voting will begin at ***time date** and end ***time date*** </p>
-            <p>Click the link below to begin voting - <a href='www.euroschoolelection.hotpo.in/index.php?id=$keyid&house=$house'>www.euroschoolelection.hotpo.in/vote.php?id=$keyid&house=$house</a>
+            <p>Voting will begin at ***time date** and end at ***time date*** </p>
+            <p>Click the link to vote during voting period - <a href='www.euroschoolelection.hotpo.in/index.php?id=$keyid&house=$house'>www.euroschoolelection.hotpo.in/index.php?id=$keyid&house=$house</a>
             <p>Follow the link in your mail to vote when voting starts</p>
             <h3 >Instructions</h3>
             <ul>
@@ -42,12 +43,12 @@ function sendmail($enroll,$email,$keyid,$house){
                     
                        if(!$mail->Send())
                          {
-                            echo "Mailer Error: " . $mail->ErrorInfo;
+                            echo "Mailer Error: $email $enroll" . $mail->ErrorInfo;
                             $data = $mail->ErrorInfo;
                          }
                          else
                         {
-                            $data = "Mail sent"; 
+                            $data = "Mail sent $email $enroll"; 
                         }
     
 
@@ -55,5 +56,3 @@ return $data;
 }
 
 ?>
-
-<a href="www.euroschoolelection.hotpo.in/vote.php?id=$keyid&house=$house"></a>

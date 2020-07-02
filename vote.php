@@ -6,11 +6,10 @@
 <?php
 $data=getcandidates();
 $house = $_SESSION['house'];
-$_SESSION['housecolor']="white";
 $house_posts = gethousecandidates($house);
 //print_r($house_posts);
 ?>
-<br><br>
+<br><br><br>
 <div class="container outer">
     <div class="row ">
 
@@ -94,15 +93,14 @@ $house_posts = gethousecandidates($house);
 <br>
 <br>
 <div class="container">
-    <div class="row">
-        <div class="col-sm-5">
-        </div>
-        <div class="col-sm-2">
-            <button onclick="vote()" class="btn btn-success">Vote!</button>
-        </div>
+    
+       <center>
+    <button onclick="vote()" style="width:50%" class="btn btn-success">Vote!</button>
+    </center> 
+        
 
 
-    </div>
+    
 </div>
 <br>
 <br>
