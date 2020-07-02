@@ -34,7 +34,7 @@ include 'backend/conn.php';
     if($row){ 
         $sql = "UPDATE register SET email = '$email', house = '$house', keyid='$keyid' WHERE enroll = '$enroll'";
         $result = $conn->query($sql);
-        $sql = "INSERT INTO votekeys(keyid,house) VALUES('$keyid','$house')";
+        $sql = "INSERT INTO votekeys VALUES('0','$keyid','$house','0')";
         $result2 = $conn->query($sql);
         if($result && $result2){
       
