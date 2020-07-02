@@ -1,4 +1,4 @@
 <?php
-$global['email'] = "";
-$global['password'] = "";
+$global['email'] = "eschoolelections@gmail.com";
+$global['password'] = "Makjets13";
 ?>

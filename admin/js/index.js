@@ -55,7 +55,7 @@ function addcandidate() {
                     alert("Candidate added");
                     $("#name").val(null);
                 } else {
-                    alert("Error Adding Candidate");
+                    alert("Error Adding Candidate "+data);
                     window.location = '';
                 }
             }
