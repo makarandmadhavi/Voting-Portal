@@ -18,6 +18,8 @@ function login() {
             } else if (data == "KEYUSED") {
                 alert("The KEY has already been used for Voting! if you haven't voted please request another key!");
                 window.location = '';
+            } else if (data == "CLOSED"){
+                alert("Voting is closed. Please come back during voting period to vote");
             } else {
                 alert("Incorrect Key! KEY does not exist");
                 window.location = '';

@@ -45,6 +45,7 @@
             </div>
             <center>
                 <button type="submit" class="btn btn-success ">Register</button>
+                <button style="margin-left:5px;" onclick="window.location = 'index.php';" class="btn btn-info ">Back to Login</button>
             </center>
             <br>
 

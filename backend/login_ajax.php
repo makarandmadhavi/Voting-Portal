@@ -6,7 +6,8 @@
     $sql = "SELECT * FROM votekeys WHERE keyid='$key'";
     $result = $conn->query($sql);
     $row = $result->fetch_assoc();
-    if($row){
+    $openvoting = 1;
+    if($row && $openvoting){
         if($row['isused']=='0'){
             session_start();
             $_SESSION['key'] = $row['keyid'];
@@ -22,5 +23,8 @@
             echo 'KEYUSED';
         }
         
+    }
+    if(!$openvoting){
+        echo 'CLOSED';
     }
 ?>
