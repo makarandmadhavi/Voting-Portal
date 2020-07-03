@@ -16,7 +16,7 @@ return $data;
 function getkeys(){
     include 'conn.php';
     $data = array();
-    $sql = "SELECT * FROM votekeys ORDER BY isused,id";
+    $sql = "SELECT register.enroll AS enroll, register.email as email, register.keyid AS keyid, votekeys.isused as isused FROM register LEFT JOIN votekeys ON register.keyid = votekeys.keyid ORDER by enroll";
     $result = $conn->query($sql);
     if($result){     
         while($row = $result -> fetch_assoc()){

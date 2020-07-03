@@ -12,15 +12,16 @@ $parts = array_chunk($allkeys,35);
     <div class="row">
         
         <?php foreach($parts as $part=>$keys){ ?>
-        <div class="col-sm-3">
+        <div class="col-sm-4">
             <br>
             <br><br>
         <h5>Part Number <?=$part+1?></h5>
             <ul class="list-group">
                 <?php foreach($keys as $key){ ?>
                 <li style="height:41px;" class="list-group-item d-flex justify-content-between align-items-center">
-                    <?=$key['keyid']?>
+                    <?=$key['enroll']?>
                     <span class="badge badge-danger badge-pill"><?php if($key['isused']){ echo 'used'; } ?></span>
+                    <span class="badge badge-info badge-pill"><?=$key['keyid']?></span>
                 </li>
                 <?php } ?>
                 <!-- <li class="list-group-item d-flex justify-content-between align-items-center">
