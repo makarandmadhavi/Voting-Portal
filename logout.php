@@ -7,11 +7,13 @@ include "templates/header.php";
     $key = $_SESSION['key'];
     $house = $_SESSION['house'];
     $voteids = $_SESSION['voteids'];
-    $sql = "UPDATE votekeys SET isused=1, house='$house', isused='$voteids' WHERE keyid='$key'";
+    $sql = "UPDATE votekeys SET house='$house', isused='$voteids' WHERE keyid='$key'";
     $result = $conn->query($sql);
 
 session_destroy();
-
+if($_SESSION['voteids']==0){
+    header("refresh: 0; url = index.php"); 
+}
 ?>
 
 
