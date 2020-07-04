@@ -38,6 +38,10 @@ h5{
     margin-left: -60px;
 }
 
+#logintitle{
+    font-weight: 200;
+}
+
 label {
     font-weight: 500 !important;
     font-size: 17px !important;

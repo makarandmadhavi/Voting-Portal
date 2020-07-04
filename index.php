@@ -23,7 +23,7 @@ if(isset($_GET['house'])){
             <img id="logo" src="images/EuroSchool.jpg" alt="logo">
         </div>
         <div class="col-sm-4 text-center">
-            <h2 id="title">Thane</h2>
+            <h2 id="title">Euro School Thane</h2>
         </div>
     </div>
 </div>
@@ -31,8 +31,9 @@ if(isset($_GET['house'])){
 
 <div style="max-width: 500px;" class="add-box container">
     <div>
-        <h1 class="text-center">Login to Vote!</h1>
+        <h1 id="logintitle" class="text-center">Login to Vote!</h1>
     </div>
+    <br>
     <div class="container">
 
         <div class="form-group">
