@@ -16,12 +16,12 @@ function login() {
             if (data == "SUCCESS") {
                 window.location = 'vote.php';
             } else if (data == "KEYUSED") {
-                alert("The KEY has already been used for Voting! if you haven't voted please request another key!");
+                alert("The ID has already been used for Voting! if you haven't voted please request another ID!");
                 window.location = '';
             } else if (data == "CLOSED"){
                 alert("Voting is closed. Please come back during voting period to vote");
             } else {
-                alert("Incorrect Key! KEY does not exist");
+                alert("Incorrect ID! ID does not exist");
                 window.location = '';
             }
         }
