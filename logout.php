@@ -11,9 +11,7 @@ include "templates/header.php";
     $result = $conn->query($sql);
 
 session_destroy();
-if($_SESSION['voteids']==0){
-    header("refresh: 0; url = index.php"); 
-}
+
 ?>
 
 
