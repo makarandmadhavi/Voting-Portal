@@ -1,5 +1,5 @@
 <?php
 session_destroy();
-header("refresh: 0; url = index.php"); 
+header("refresh: 1; url = index.php"); 
 
 ?>
