@@ -58,7 +58,9 @@ if(isset($_GET['house'])){
        <br>
      
     </div>
+    <center>
     <p>Please Register First before Logging in</p>
+    </center>
 </div>
 
 <?php include "templates/footer.php"; ?>
