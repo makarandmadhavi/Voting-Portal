@@ -89,7 +89,7 @@ include 'backend/conn.php';
         </div>
         <div class="card-body">
             <p>Contact your classs teacher if you did not recieve any mail or are facing any issue</p>
-            <a href="register.php" class="btn btn-primary">Go Back</a>
+            <a href="index.php" class="btn btn-primary">Go Back</a>
         </div>
         <div class="card-footer text-muted">
             
