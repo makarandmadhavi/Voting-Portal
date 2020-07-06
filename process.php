@@ -30,8 +30,11 @@ include 'backend/conn.php';
     $data = $_POST;
     $sql = "SELECT * FROM register WHERE enroll='$enroll'";
     $result = $conn->query($sql);
+    $sql = "SELECT * FROM register WHERE email='$email'";
+    $result2 = $conn->query($sql);
+
     $row = $result->fetch_assoc();
-    if($row){ 
+    if($row && !result2){ 
         $sql = "UPDATE register SET email = '$email', house = '$house', keyid='$keyid' WHERE enroll = '$enroll'";
         $result = $conn->query($sql);
         $sql = "INSERT INTO votekeys VALUES('0','$keyid','$house','0')";
