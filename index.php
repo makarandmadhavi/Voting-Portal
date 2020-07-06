@@ -1,6 +1,18 @@
 <?php include 'templates/header.php'; ?>
 <?php include 'backend/keyout.php'; ?>
+<?php
+$id="";
+$house="Apollo";
 
+if(isset($_GET['id'])){
+    $id=$_GET['id'];
+}
+
+if(isset($_GET['house'])){
+    $house=$_GET['house'];
+}
+
+?>
 
 
 
@@ -11,7 +23,7 @@
             <img id="logo" src="images/EuroSchool.jpg" alt="logo">
         </div>
         <div class="col-sm-4 text-center">
-            <h1 id="title">Cast Your Vote</h1>
+            <h2 id="title">Euro School Thane</h2>
         </div>
     </div>
 </div>
@@ -19,39 +31,36 @@
 
 <div style="max-width: 500px;" class="add-box container">
     <div>
-        <h1 class="text-center">Register</h1>
+        <h1 id="logintitle" class="text-center">Login to Vote!</h1>
     </div>
+    <br>
     <div class="container">
-        <form action="process.php" method="post">
-            <div class="form-group">
-                <label >Enrollment number</label>
-                <input required="" type="number" name="enroll" class="form-control" id="enroll" 
-                    placeholder="Enrollment number">
-            </div>
-            <div class="form-group">
-                <label >Email</label>
-                <input required="" type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp"
-                    placeholder="Email">
-            </div>
-            <div class="form-group" id="housediv">
-                <label >House</label>
-                <select name="house" required value="select" class="form-control" id="house">
-                    <option disabled="" default hidden selected="selected" value="" >Select house</option>
-                    <option value="Apollo">Apollo</option>
-                    <option value="Mercury">Mercury</option>
-                    <option value="Poseidon">Poseidon</option>
-                    <option value="Zeus">Zeus</option>
-                </select>
-            </div>
-            <center>
-                <button type="submit" class="btn btn-success ">Register</button>
-                <button style="margin-left:5px;" onclick="window.location = 'index.php';" class="btn btn-info ">Back to Login</button>
-            </center>
-            <br>
 
-        </form>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Voter ID</label>
+            <input type="text" class="form-control" id="key" value="<?=$id?>"
+                aria-describedby="emailHelp" placeholder="ID">
+        </div>
+        <div class="form-group" id="housediv">
+            <label for="exampleInputPassword1">House</label>
+            <select class="form-control" id="house">
+                <option <?php if($house=="Apollo"){ echo 'selected'; } ?> value="Apollo">Apollo</option>
+                <option <?php if($house=="Mercury"){ echo 'selected'; } ?> value="Mercury">Mercury</option>
+                <option <?php if($house=="Poseidon"){ echo 'selected'; } ?> value="Poseidon">Poseidon</option>
+                <option <?php if($house=="Zeus"){ echo 'selected'; } ?> value="Zeus">Zeus</option>
+            </select>
+        </div>
+        <center>
+        <button style="margin-left:5px;" onclick="window.location = 'register.php';" class="btn btn-info ">Register to Vote!</button>
+        <button  onclick="login()" class="btn btn-success ">Start Voting</button>
+        
+        </center>
+       <br>
+     
     </div>
-
+    <center>
+    <p>Please Register First before Logging in</p>
+    </center>
 </div>
 
 <?php include "templates/footer.php"; ?>
