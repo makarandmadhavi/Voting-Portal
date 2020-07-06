@@ -78,10 +78,10 @@ function removecandidate(id, name) {
                 //data is returned here
                 if (data == "SUCCESS") {
                     alert("Candidate Removed");
-                    window.location = '';
+                    
                 } else {
                     alert("Error Removing candidate");
-                    window.location = '';
+                
                 }
             }
         });
@@ -105,10 +105,10 @@ function updatecandidate(id) {
                 //data is returned here
                 if (data == "SUCCESS") {
                     alert("Candidate updated");
-                    window.location = '';
+                    
                 } else {
                     alert("Error updating candidate");
-                    window.location = '';
+                    
                 }
             }
         });
