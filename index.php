@@ -53,12 +53,12 @@ if(isset($_GET['house'])){
         <center>
         <button style="margin-left:5px;" onclick="window.location = 'register.php';" class="btn btn-info ">Register to Vote!</button>
         <button  onclick="login()" class="btn btn-success ">Start Voting</button>
+        
         </center>
        <br>
      
-
     </div>
-
+    <p>Please Register First before Logging in</p>
 </div>
 
 <?php include "templates/footer.php"; ?>
