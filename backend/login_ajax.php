@@ -1,12 +1,13 @@
 <?php
     include 'conn.php';
+    include '../settings.php';
     $data = $_POST;
     $key = $data['key'];
     $house = $data['house'];
     $sql = "SELECT * FROM votekeys WHERE keyid='$key'";
     $result = $conn->query($sql);
     $row = $result->fetch_assoc();
-    $openvoting = 1;
+    $openvoting = $global['openvoting'];
     if($row && $openvoting){
         if($row['isused']=='0'){
             session_start();
