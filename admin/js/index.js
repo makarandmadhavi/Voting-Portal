@@ -1,5 +1,5 @@
-var active=0;
-var txt="";
+var active = 0;
+var txt = "";
 
 function login() {
     username = $('#username').val();
@@ -18,7 +18,7 @@ function login() {
             //data is returned here
             if (data == "SUCCESS") {
                 alert("Successful Login");
-                window.location='admin.php'
+                window.location = 'admin.php'
             } else {
                 alert(data);
                 window.location = '';
@@ -55,7 +55,7 @@ function addcandidate() {
                     alert("Candidate added");
                     $("#name").val(null);
                 } else {
-                    alert("Error Adding Candidate "+data);
+                    alert("Error Adding Candidate " + data);
                     window.location = '';
                 }
             }
@@ -78,10 +78,10 @@ function removecandidate(id, name) {
                 //data is returned here
                 if (data == "SUCCESS") {
                     alert("Candidate Removed");
-                    
+
                 } else {
                     alert("Error Removing candidate");
-                
+
                 }
             }
         });
@@ -90,34 +90,41 @@ function removecandidate(id, name) {
 }
 
 function updatecandidate(id) {
-        name=$("#candidate"+id).val();
-        console.log(id);
-        $.ajax({
-            type: "POST",
-            url: "backend/updatecandidate_ajax.php",
-            data: {
-                //data goes here
-                id,
-                name
+    name = $("#candidate" + id).val();
+    console.log(id);
+    $.ajax({
+        type: "POST",
+        url: "backend/updatecandidate_ajax.php",
+        data: {
+            //data goes here
+            id,
+            name
 
-            },
-            success: function (data) {
-                //data is returned here
-                if (data == "SUCCESS") {
-                    alert("Candidate updated");
-                    
-                } else {
-                    alert("Error updating candidate");
-                    
-                }
+        },
+        success: function (data) {
+            //data is returned here
+            if (data == "SUCCESS") {
+                alert("Candidate updated");
+                $("#editbtn" + id).show();
+                $("#removebtn" + id).show();
+                $("#cancelbtn" + id).hide();
+                $("#updatebtn" + id).hide();
+                $("#removebtn" + id).addClass('hide');
+                $("#editbtn" + id).addClass('hide');
+                active = 0;
+
+            } else {
+                alert("Error updating candidate");
+
             }
-        });
-    
+        }
+    });
+
 
 }
 
 function generatekeys() {
-    keys=$('#keys').val();
+    keys = $('#keys').val();
     console.log(keys);
     //console.log(username);
     //console.log(password);
@@ -143,38 +150,38 @@ function generatekeys() {
 }
 
 
-function editbtn(id){
+function editbtn(id) {
     //console.log(id);
-    active=id;
-    $("#"+id).css("background-color","#f0f0f0");
-    txt=$("#candidate"+id).val();
-    $("#candidate"+id).removeAttr("disabled");
-    $("#candidate"+id).focus();
-    $("#editbtn"+id).hide();
-    $("#removebtn"+id).hide();
-    $("#cancelbtn"+id).show();
-    $("#updatebtn"+id).show();
+    active = id;
+    $("#" + id).css("background-color", "#f0f0f0");
+    txt = $("#candidate" + id).val();
+    $("#candidate" + id).removeAttr("disabled");
+    $("#candidate" + id).focus();
+    $("#editbtn" + id).hide();
+    $("#removebtn" + id).hide();
+    $("#cancelbtn" + id).show();
+    $("#updatebtn" + id).show();
 }
 
-function cancelbtn(id,name){
+function cancelbtn(id, name) {
     //console.log(id);
     //console.log(name);
-    $("#"+id).css("background-color","");
-    $("#candidate"+id).val(name);
-    $("#editbtn"+id).show();
-    $("#removebtn"+id).show();
-    $("#cancelbtn"+id).hide();
-    $("#updatebtn"+id).hide();
-    $("#removebtn"+id).addClass('hide');
-    $("#editbtn"+id).addClass('hide');
-    active=0;
+    $("#" + id).css("background-color", "");
+    $("#candidate" + id).val(name);
+    $("#editbtn" + id).show();
+    $("#removebtn" + id).show();
+    $("#cancelbtn" + id).hide();
+    $("#updatebtn" + id).hide();
+    $("#removebtn" + id).addClass('hide');
+    $("#editbtn" + id).addClass('hide');
+    active = 0;
 }
 
-$("body").click(function(){
+$("body").click(function () {
     //console.log(event.target.nodeName);
     //console.log(event.target.id);
-    if(active && event.target.id!="candidate"+active && event.target.nodeName!="BUTTON" ){
-        cancelbtn(active,txt);
+    if (active && event.target.id != "candidate" + active && event.target.nodeName != "BUTTON") {
+        cancelbtn(active, txt);
         //console.log("Cancel"+active);
 
     }
@@ -196,19 +203,18 @@ $("#postdiv").change(function () {
 $(".hov").hover(function () {
 
     //console.log("removebtn"+this.id);
-    if(!active){
-        $("#removebtn"+this.id).removeClass('hide');
-        $("#editbtn"+this.id).removeClass('hide');
+    if (!active) {
+        $("#removebtn" + this.id).removeClass('hide');
+        $("#editbtn" + this.id).removeClass('hide');
     }
-    
-        
+
+
 
 }, function () {
-    if(!active){
-        $("#removebtn"+this.id).addClass('hide');
-        $("#editbtn"+this.id).addClass('hide');
+    if (!active) {
+        $("#removebtn" + this.id).addClass('hide');
+        $("#editbtn" + this.id).addClass('hide');
     }
-    
+
     //after hover
 });
-
