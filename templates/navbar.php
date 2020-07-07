@@ -11,9 +11,9 @@
             <li class="nav-item active">
                 <img src="images/<?=$_SESSION['house']?>.jpg" class="houseimg" alt="">
             </li> 
-            <!-- <li class="nav-item">
-                <a class="nav-link" href="viewcandidates.php">View Candidates</a>
-            </li> -->
+            <li class="nav-item" style="padding:20px;">
+               Voter ID: <b><?=$_SESSION['key']?></b>
+            </li>
             <!-- <li class="nav-item">
                 <a class="nav-link" href="">View Orders</a>
             </li> -->

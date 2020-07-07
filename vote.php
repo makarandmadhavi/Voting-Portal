@@ -94,8 +94,8 @@ $house_posts = gethousecandidates($house);
 <br>
 <div class="container">
     
-       <center>
-    <button onclick="vote()" style="width:50%" class="btn btn-success">Vote!</button>
+    <center>
+    <button onclick="vote()" style="width:50%; height:40px" class="btn btn-success">Vote!</button>
     </center> 
         
 
