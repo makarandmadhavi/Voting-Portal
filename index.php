@@ -48,7 +48,7 @@
             </center>
             <br>
             <center>
-            <button style="margin-left:5px;" onclick="window.location = 'login.php';" class="btn btn-info ">Go to Login</button>
+            <a href="login.php" style="margin-left:5px;"  class="btn btn-info ">Go to Login</a>
             </center>
             <br>
 
