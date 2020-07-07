@@ -51,7 +51,6 @@ include 'backend/conn.php';
         </div>
         <div class="card-body">
             <p>Link for voting along with your voting ID is mailed to you.</p>
-            <p>Voting will begin at ***time date** and end ***time date*** </p>
             <p>Follow the link in your mail to vote when voting starts</p>
             <h3 class="card-title">Instructions</h3>
             <ul>
@@ -61,7 +60,7 @@ include 'backend/conn.php';
             <li class="card-text">You can only vote once</li>
             <li class="card-text">Contact your class teacher if you did not recieve the mail or are facing any issue</li>
             </ul>
-            
+            <button style="margin-left:5px;" onclick="window.location = 'login.php?id=<?=$keyid?>&house=<?=$house?>';" class="btn btn-info ">Go to Login</button>
            
         </div>
         <div class="card-footer text-muted">

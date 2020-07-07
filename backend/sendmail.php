@@ -24,10 +24,9 @@ function sendmail($enroll,$email,$keyid,$house){
             );
             
             $mail->Body = "
-            <p>Voting will begin at ***time date** and end at ***time date*** </p>
-            <p>Click the link to vote during voting period - <a href='http://euroschoolelection.hopto.org/index.php?id=$keyid&house=$house'>http://euroschoolelection.hopto.org/index.php?id=$keyid&house=$house</a>
+            <p>Click the link to start voting - <a href='http://euroschoolelection.hopto.org/login.php?id=$keyid&house=$house'>http://euroschoolelection.hopto.org/login.php?id=$keyid&house=$house</a>
             
-            <h3 >Instructions</h3>
+            <h3>Instructions</h3>
             <ul>
             <li >Your voting login ID is : <b>$keyid</b></li>
             <li >House : <b>$house</b></li>
