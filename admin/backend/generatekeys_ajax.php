@@ -8,7 +8,7 @@
         for($i=0;$i<5;$i++){
             $key=$key.$symbols[rand(0,34)];
         }
-        $sql = "INSERT INTO votekeys(keyid) VALUES ('$key')";
+        $sql = "INSERT INTO votekeys SET keyid='$key'";
         $result = $conn->query($sql);
         if(!$result){
             echo 'FAIL';
