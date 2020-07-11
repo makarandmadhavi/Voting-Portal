@@ -20,7 +20,7 @@
         </ul>
         <h1 class="votehead">Click to vote  </h1>
         <div style="margin-right: 100px;">
-            <button onclick="vote()" class="btn btn-outline-success">Vote!</button>
+            <button onclick="vote()" class="btn btn-outline-success vote-btn">Vote!</button>
             <a href="novote.php" class="btn btn-outline-danger">logout</a>
         </div>
     </div>

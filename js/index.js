@@ -50,7 +50,8 @@ function addvotes(voteids) {
     });
 }
 
-function vote() {
+function vote(but) {
+    $(".vote-btn").prop("disabled",true);
     voteids = [];
     allselected = 1;
     //console.log(headboy);
@@ -79,10 +80,11 @@ function vote() {
                     addvotes(voteids);
                 } else {
                     alert("Please Vote for all Posts!");
+                    $(".vote-btn").prop("disabled",false);
                 }
                 //console.log(voteids);
             } else {
-
+                $(".vote-btn").prop("disabled",false);
                 alert("Error Voting");
             }
         }
